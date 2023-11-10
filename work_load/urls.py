@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from work_load import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('pod/', include('pod.urls')),
-    path('workLoad/', include('work_load.urls')),
+    # deployment
+    path('deploy/get', views.get_deploy),
+    path('deploy/create', views.create_deploy),
+    path('delete', views.delete_resource),
+
 ]
