@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from common import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('pod/', include('pod.urls')),
-    path('workLoad/', include('work_load.urls')),
-    path('common/',include('common.urls')),
+    path('namespace',views.get_ns)
+
 ]
