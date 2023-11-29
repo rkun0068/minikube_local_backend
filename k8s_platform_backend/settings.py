@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'pod.apps.PodConfig',
     'work_load.apps.WorkLoadConfig',
     'common.apps.CommonConfig',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [

@@ -19,6 +19,7 @@ from django.urls import path, include
 from common import views
 
 urlpatterns = [
-    path('namespace',views.get_ns)
+    path('namespace',views.get_ns),
+    path('createByYaml',views.create_by_yaml),
 
 ]

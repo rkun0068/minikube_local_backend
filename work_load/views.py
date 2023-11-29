@@ -110,3 +110,34 @@ def delete_resource(request):
     except Exception as e:
         json_info = {"code": 500, "message": f"{e}"}
         return JsonResponse(json_info)
+
+
+def get_replica(request):
+    try:
+        ns = request.GET.get('ns')
+        cmd = "kubectl get replicaset -n " + ns + " --output=json"
+        output = subprocess.check_output(cmd, shell=True)
+        deploys_info = json.loads(output)
+        json_info = {"code": 200, "message": "success", "result": deploys_info}
+        return JsonResponse(json_info)
+    except Exception as e:
+        json_info = {"code": 500, "message": str(e)}
+        return JsonResponse(json_info)
+
+
+def get_svc(request):
+    try:
+        ns = request.GET.get('ns')
+        cmd = "kubectl get svc -n " + ns + " --output=json"
+        output = subprocess.check_output(cmd, shell=True)
+        svcs_info = json.loads(output)
+        json_info = {"code": 200, "message": "success", "result": svcs_info}
+        return JsonResponse(json_info)
+    except Exception as e:
+        json_info = {"code": 500, "message": str(e)}
+        return JsonResponse(json_info)
+
+
+
+
+

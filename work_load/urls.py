@@ -23,5 +23,7 @@ urlpatterns = [
     path('deploy/get', views.get_deploy),
     path('deploy/create', views.create_deploy),
     path('delete', views.delete_resource),
+    path('replica/get',views.get_replica),
+    path('svc/get',views.get_svc),
 
 ]
